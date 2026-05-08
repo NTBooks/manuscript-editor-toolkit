@@ -1,0 +1,33 @@
+# Manuscript files (user's content, not toolkit files)
+novel.md
+novel.txt
+text.txt
+chapters/
+
+# Generated reports
+scene_index.md
+book_summary.md
+story_bible.md
+wordcount_report.md
+pacing_report.md
+chronology_check.md
+continuity_check.md
+style_check.md
+head_hopping_check.md
+manuscript.md
+query_letter.md
+synopsis.md
+
+# Generated data and temp scripts
+*_data.json
+split_chapters.mjs
+pacing_metrics.mjs
+bible_extract.mjs
+recombine.mjs
+wordcount.mjs
+
+# Proposals
+proposals/
+
+# Editor-specific
+.obsidian/
