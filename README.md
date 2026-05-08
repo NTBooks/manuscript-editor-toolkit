@@ -4,6 +4,32 @@ A set of 14 Claude Code slash commands that turn Claude into a professional manu
 
 > **Every word of prose is written by the human author.** This toolkit uses AI strictly as an editorial and organizational tool — never as a ghostwriter. The system is designed at every level to prevent AI from generating narrative text. See the full [AI Use Disclosure & Ethics](#ai-use-disclosure--ethics) section below.
 
+## You Bring the Manuscript
+
+This toolkit is for **revision, not creation**. You need an existing draft — complete or incomplete — before any of these commands are useful. The toolkit doesn't help you outline, draft, or generate prose. It picks up where the writing stops and the editing begins.
+
+### Where this fits in the manuscript lifecycle
+
+```
+ Drafting          Revision & Editing         Submission / Publication
+─────────────     ────────────────────────    ─────────────────────────
+ You write        ◄── THIS TOOLKIT ──►        Query letters to agents
+ your draft.      Split, index, audit,        Self-pub formatting
+                  analyze, propose edits.     
+                  You revise. Repeat.         
+```
+
+**Typical stages where this toolkit applies:**
+
+| Stage | What you're doing | Useful commands |
+|-------|-------------------|-----------------|
+| **Developmental edit** | Big-picture structure, pacing, arc | `/pacing`, `/summarize`, `/bible`, `/propose` |
+| **Continuity pass** | Catching contradictions and timeline errors | `/continuity`, `/chronology`, `/scene-guide` |
+| **Line edit prep** | Style consistency, POV discipline, word-level cleanup | `/style-check`, `/head-hopping`, `/find` |
+| **Pre-submission** | Preparing query materials, final word counts | `/query-letter`, `/wordcount`, `/recombine` |
+
+You can start with a rough first draft or a polished fifth — the commands work the same either way. The earlier you start, the more revision cycles you'll get value from the structural analysis commands.
+
 ## What You Get
 
 | Command | What it does |
