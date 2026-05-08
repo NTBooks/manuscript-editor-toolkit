@@ -165,9 +165,14 @@ List the files created in `chapters/` and report:
 - The heading pattern that was detected
 - Confirm the files are ready
 
-### 7. Clean up
+### 7. Tell the user how to re-run
 
-Delete `split_chapters.mjs` after a successful run.
+Do NOT delete `split_chapters.mjs`. Instead, tell the user:
+
+> The split script has been saved as `split_chapters.mjs`. To re-split without using tokens, run:
+> ```
+> node split_chapters.mjs
+> ```
 
 ## Notes
 
