@@ -16,7 +16,8 @@ style_check.md
 head_hopping_check.md
 manuscript.md
 query_letter.md
-synopsis.md
+/synopsis.md
+/beats_index.md
 
 # Generated data and temp scripts
 *_data.json

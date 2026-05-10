@@ -44,6 +44,8 @@ When a task can be done by a script (counting, concatenating, formatting), write
 - `chronology_check.md` — timeline audit
 - `continuity_check.md` — continuity audit
 - `style_check.md` — style guide violation report
+- `beats_index.md` — narrative weight map (turning points, escalation, foundation, transitions)
+- `synopsis.md` — Cliff's Notes-style study synopsis
 
 ## Available Commands
 
@@ -61,3 +63,4 @@ When a task can be done by a script (counting, concatenating, formatting), write
 - `/head-hopping` — detect POV violations (grep-based)
 - `/pacing` — analyze pacing, beat structure, tension arcs, scene types (script + scene_index)
 - `/bible` — generate character/world bible with profiles, knowledge matrix, locations, objects
+- `/synopsis` — generate Cliff's Notes-style study synopsis with beats index (requires /scene-guide first)
