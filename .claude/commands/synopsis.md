@@ -16,39 +16,75 @@ If prerequisites are missing, tell the user which command(s) to run first and st
 
 ### 1. Build the Beats Index
 
-This is the critical first step. Read `scene_index.md` in full and classify every chapter by **narrative weight** — how much the chapter moves or transforms the story.
+This is a two-pass process. The first pass classifies chapters by their local narrative signals. The second pass traces causal chains to find which chapters are structurally load-bearing for the whole plot — regardless of how dramatic they feel in isolation.
 
-For each chapter, assign one of:
+#### Pass 1: Local classification
 
-- **TURNING POINT** — A chapter where something irreversibly changes: a reveal that reframes the story, a decision that closes off paths, a reversal, a climax. The reader's understanding of the story is different after this chapter than before it.
+Read `scene_index.md` in full. For each chapter, assign an **initial weight** based on local signals:
+
+- **TURNING POINT** — Something irreversibly changes: a reveal that reframes the story, a decision that closes off paths, a reversal, a climax.
 - **ESCALATION** — Raises stakes, deepens conflict, or advances a character arc meaningfully, but doesn't fundamentally redirect the narrative.
-- **FOUNDATION** — Establishes character, world, relationships, or tension that later chapters depend on. Important but not where the energy lives.
-- **TRANSITION** — Moves characters between situations, handles logistics, provides breathing room. Necessary but low narrative weight.
+- **FOUNDATION** — Establishes character, world, relationships, or tension that later chapters depend on.
+- **TRANSITION** — Moves characters between situations, handles logistics, provides breathing room.
 
-Signals to use from scene_index.md:
+Local signals from scene_index.md:
 - Key reveals → likely TURNING POINT or ESCALATION
 - Blind spots (dramatic irony) → often FOUNDATION (setup for later payoff)
 - New major characters introduced → FOUNDATION
 - Multiple reveals + high character count → likely TURNING POINT
 - No reveals, few characters, single location → likely TRANSITION
 
-Write the beats index to `beats_index.md`:
+#### Pass 2: Causal chain analysis
+
+Local signals catch what's *dramatic* but miss what's *causally central*. A quiet chapter where a character makes a private decision might enable every turning point that follows. A dramatic confrontation might be emotionally intense but causally peripheral.
+
+Trace causal dependency by working **backward from the resolution:**
+
+1. Identify the final chapter's resolution — what is resolved, and what made that resolution possible?
+2. For each cause identified, find the chapter where it originates or crystallizes. Mark that chapter as **on the critical path**.
+3. Repeat: for each critical-path chapter, ask what prior chapters were necessary for it. Follow the chain back to Chapter 1.
+4. When the chain is complete, you have the novel's **causal spine** — the minimal set of chapters without which the ending doesn't work.
+
+Then trace **secondary causal threads**: subplots, character arcs, and thematic developments that aren't on the main spine but still form their own dependency chains.
+
+#### Reclassification rules
+
+After tracing, adjust the initial weights:
+
+- A chapter initially classified as FOUNDATION or TRANSITION that sits on the causal spine → upgrade to ESCALATION or TURNING POINT (it may be quiet but it's load-bearing)
+- A chapter initially classified as TURNING POINT that has no downstream dependents (nothing later requires it) → downgrade to ESCALATION (locally dramatic but causally peripheral)
+- A chapter that is a junction point (multiple causal threads converge or diverge from it) → TURNING POINT regardless of initial classification
+
+Note reclassifications explicitly in the beats index with a brief reason.
+
+#### Write `beats_index.md`
 
 ```markdown
 # Beats Index
 
+## Causal Spine
+[Ordered list of chapters on the critical path from opening to resolution.
+For each: chapter number, one sentence stating what it contributes to the
+causal chain. This is the novel's backbone.]
+
 ## Narrative Weight Map
 
-| Ch | Weight | Beat | One-Line |
-|----|--------|------|----------|
-| 1 | FOUNDATION | Opening state | [What is established] |
-| 2 | ESCALATION | Inciting pressure | [What escalates] |
-| 5 | TURNING POINT | First reversal | [What changes irreversibly] |
+| Ch | Weight | Reclassified? | Beat | One-Line |
+|----|--------|---------------|------|----------|
+| 1 | FOUNDATION | — | Opening state | [What is established] |
+| 4 | ESCALATION | ↑ from TRANSITION | Quiet pivot | [Decision that enables Ch 12] |
+| 5 | TURNING POINT | — | First reversal | [What changes irreversibly] |
+| 8 | ESCALATION | ↓ from TURNING POINT | Dramatic but contained | [Intense but no downstream deps] |
 ...
 
 ## Turning Points (in order)
 1. Chapter [N]: [What happens and why it matters — 1-2 sentences]
 2. Chapter [N]: ...
+
+## Causal Threads
+- **Main spine:** Ch [N] → Ch [N] → Ch [N] → ... → Resolution
+- **[Subplot/arc name]:** Ch [N] → Ch [N] → Ch [N] (feeds into spine at Ch [N])
+- **[Subplot/arc name]:** Ch [N] → Ch [N] → Ch [N] (resolves independently at Ch [N])
 
 ## Thematic Threads
 - [Theme]: Introduced Ch[N], developed Ch[N,N,N], resolved/transformed Ch[N]
@@ -161,12 +197,13 @@ Brief chronological summary of events in story-world order.]
 
 ## Economy Rules
 
-- The beats index is built entirely from scene_index.md — no chapter reads needed for step 1
-- Chapter read depth is proportional to narrative weight (turning points: full; transitions: none)
+- Pass 1 (local classification) uses only scene_index.md — no chapter reads
+- Pass 2 (causal chain) uses scene_index.md + targeted grep to confirm dependencies. Read the last chapter's final pages to anchor the resolution. Only read other chapters if the causal link is ambiguous from scene_index alone.
+- Chapter read depth in step 2 is proportional to final narrative weight (turning points: full; transitions: none)
 - `book_summary.md` is a fact-check reference only, never a content source — it flattens narrative hierarchy
 - Never read `novel.md` or `novel.txt`
 - Grep before reading when looking for specific quotations or thematic keywords
-- The beats index does the heavy interpretive lifting; chapter reads confirm and enrich it
+- The beats index (both passes) does the heavy interpretive lifting; chapter reads confirm and enrich it
 
 ## Handling $ARGUMENTS
 
