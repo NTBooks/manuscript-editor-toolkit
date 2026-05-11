@@ -1,6 +1,6 @@
 # Manuscript Editor Toolkit
 
-A set of 14 Claude Code slash commands that turn Claude into a professional manuscript editor. Claude analyzes, advises, and organizes — it never writes prose for you. The author writes; Claude edits.
+A set of 15 Claude Code slash commands that turn Claude into a professional manuscript editor. Claude analyzes, advises, and organizes — it never writes prose for you. The author writes; Claude edits.
 
 > **Every word of prose is written by the human author.** This toolkit uses AI strictly as an editorial and organizational tool — never as a ghostwriter. The system is designed at every level to prevent AI from generating narrative text. See the full [AI Use Disclosure & Ethics](#ai-use-disclosure--ethics) section below.
 
@@ -23,7 +23,7 @@ This toolkit is for **revision, not creation**. You need an existing draft — c
 
 | Stage | What you're doing | Useful commands |
 |-------|-------------------|-----------------|
-| **Developmental edit** | Big-picture structure, pacing, arc | `/pacing`, `/summarize`, `/bible`, `/propose` |
+| **Developmental edit** | Big-picture structure, pacing, arc | `/pacing`, `/synopsis`, `/summarize`, `/bible`, `/propose` |
 | **Continuity pass** | Catching contradictions and timeline errors | `/continuity`, `/chronology`, `/scene-guide` |
 | **Line edit prep** | Style consistency, POV discipline, word-level cleanup | `/style-check`, `/head-hopping`, `/find` |
 | **Pre-submission** | Preparing query materials, final word counts | `/query-letter`, `/wordcount`, `/recombine` |
@@ -48,6 +48,7 @@ You can start with a rough first draft or a polished fifth — the commands work
 | `/head-hopping` | Detect POV violations |
 | `/pacing` | Analyze pacing, beat structure, tension arcs, scene types |
 | `/bible` | Generate character/world bible with profiles, knowledge matrix |
+| `/synopsis` | Generate chapter-by-chapter analytical study synopsis with beats index |
 
 ## Prerequisites
 
@@ -194,6 +195,7 @@ These are performed by JavaScript scripts that the AI executes. The AI doesn't r
 - **Chronology audit** — Checks timeline consistency by cross-referencing temporal markers across chapters. Reports contradictions.
 - **Continuity audit** — Checks for inconsistencies in character descriptions, object details, and setting facts. Reports conflicts.
 - **Story bible** — Catalogs characters, locations, objects, and a knowledge matrix. A reference document, not narrative.
+- **Synopsis** — Generates a chapter-by-chapter analytical study synopsis with scene classifications, causal chains, and a narrative beats index. Analytical reference, not narrative.
 
 **Editorial proposals (AI advises, does not write):**
 
@@ -256,7 +258,9 @@ your-novel-project/
 ├── chronology_check.md      # Generated timeline audit (gitignored)
 ├── continuity_check.md      # Generated continuity audit (gitignored)
 ├── style_check.md           # Generated style audit (gitignored)
-└── book_summary.md          # Generated plot summary (gitignored)
+├── book_summary.md          # Generated plot summary (gitignored)
+├── synopsis.md              # Generated study synopsis (gitignored)
+└── beats_index.md           # Generated narrative beats map (gitignored)
 ```
 
 The `.gitignore` included with the toolkit prevents your manuscript and generated reports from being committed to version control.

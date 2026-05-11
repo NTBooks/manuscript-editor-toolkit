@@ -1,6 +1,6 @@
 # Generate Study Synopsis
 
-Generate a Cliff's Notes / Monarch Notes-style study synopsis — a document that understands narrative weight, giving turning points full analysis and connective chapters brief treatment.
+Generate a chapter-by-chapter analytical study synopsis — a document that understands narrative weight, giving turning points full analysis and connective chapters brief treatment.
 
 ## Prerequisites
 
